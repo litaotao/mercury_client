@@ -114,7 +114,6 @@ def download_file(cookies, filename):
             print '...',
             f.write(chunk)
 
-
 def upload_data(files, cookies):
     headers = {'Content-Type': 'multipart/form-data'}
     r = requests.post(MERCURY_URL, data=files, cookies=cookies, headers=headers)

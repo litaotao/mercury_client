@@ -88,6 +88,12 @@ class Client(object):
         else:
             pass
 
+    def backup_data(self):
+        self.download_data(download_all=True)
+
+    def backup_notebook(self):
+        self.download_data(download_all=True)
+
     # def upload_data(self, filepath):
     #     import ipdb; ipdb.set_trace()
     #     try:
