@@ -90,7 +90,7 @@ class Client(object):
         self.download_data(download_all=True)
 
     def backup_notebook(self):
-        self.download_data(download_all=True)
+        self.download_notebook(download_all=True)
 
     def upload_data(self, filepath):
         try:
