@@ -97,6 +97,8 @@ def download_notebook(cookies, filename):
         for chunk in response.iter_content(1024 * 100):
             print '...',
             f.write(chunk)
+    print u'\nDown download {}'.format(filename)
+
 
 def download_file(cookies, filename):
     url = DOWNLOAD_DATA_URL
@@ -113,12 +115,8 @@ def download_file(cookies, filename):
         for chunk in response.iter_content(1024 * 100):
             print '...',
             f.write(chunk)
+    print '\nDown download {}'.format(filename)
 
 def upload_data(files, cookies):
-    headers = {'Content-Type': 'multipart/form-data'}
-    r = requests.post(MERCURY_URL, data=files, cookies=cookies, headers=headers)
+    r = requests.post(MERCURY_URL, files=files, cookies=cookies)
     print r.text
-
-    print r.json().get('message', '') if not r.ok else ''
-
-    return r.ok
